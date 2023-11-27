@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
+import { Fade } from 'react-awesome-reveal';
 import { FeedbackWraper, BtnWraper } from './Feedback.style';
 import { Section } from './Title';
 import { FeedbackOptions } from './Button';
@@ -50,6 +51,9 @@ export const App = () => {
         transform: props.y.interpolate(y => `translateY(${y}px)`),
       }}
     >
+      <Fade delay={1e3} cascade damping={1e-9}>
+        <h1>Click the button to leave your feedback</h1>
+      </Fade>
       <FeedbackWraper>
         <Section title="Please leave feedback">
           <BtnWraper>
